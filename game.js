@@ -52,7 +52,8 @@ getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
         //go to the end page
-        return window.location.assign('/end.html');
+        window.location.assign('./end.html');
+        return
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -102,4 +103,4 @@ choices.forEach(choice => {
         scoreText.innerText = score;
       };
       
-      startGame();
+      document.addEventListener('DOMContentLoaded',startGame);
